@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Tv9-Kf-UDl">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="Rwi-d0-bCL">
+            <objects>
+                <viewController id="Tv9-Kf-UDl" customClass="MainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aYQ-5y-B2Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="YRa-b3-VbD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6fb-g2-o7t">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="1066"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="console:" translatesAutoresizingMaskIntoConstraints="NO" id="adc-HV-EKO">
+                                <rect key="frame" x="-1" y="764" width="801" height="302"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5Y-Kt-BKR">
+                                <rect key="frame" x="0.0" y="0.0" width="814" height="58"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="JSONStore Native iOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DzK-Vy-fwV">
+                                        <rect key="frame" x="278" y="29" width="258" height="21"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TZy-OO-6lp">
+                                <rect key="frame" x="77" y="113" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pass (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0iQ-Em-hHY">
+                                <rect key="frame" x="232" y="113" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYi-yn-bHf">
+                                <rect key="frame" x="77" y="151" width="302" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Initialize (Login/Open)">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="initButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="c9c-j0-e0w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="naJ-PR-yi4">
+                                <rect key="frame" x="77" y="189" width="302" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Close All (Logout)">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="4ev-24-mQu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0l-wC-BPt">
+                                <rect key="frame" x="77" y="227" width="302" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Destroy Evertyhing">
+                                    <color key="titleColor" red="1" green="0.96126666559999996" blue="0.97632513750000005" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="destroyButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="J1i-O3-hgd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QV5-je-Pf6">
+                                <rect key="frame" x="77" y="265" width="302" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Remove Collection">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="removeCollectionButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="vHc-nJ-ctL"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cze-VO-qfv">
+                                <rect key="frame" x="77" y="303" width="302" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GTy-1x-Xxj">
+                                <rect key="frame" x="77" y="311" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Age" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q5t-7N-zrN">
+                                <rect key="frame" x="232" y="311" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3g-9a-dN3">
+                                <rect key="frame" x="77" y="349" width="302" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Add Data">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addDataButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="JBd-Tg-3zn"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HLn-VM-2Dc">
+                                <rect key="frame" x="77" y="387" width="302" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search Field" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QIv-qW-wJQ">
+                                <rect key="frame" x="77" y="396" width="302" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Limit (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fiy-J9-Sd3">
+                                <rect key="frame" x="77" y="434" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Offset (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xdr-7c-aYB">
+                                <rect key="frame" x="232" y="434" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLa-oG-jkT">
+                                <rect key="frame" x="77" y="472" width="302" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Find By Name (Fuzzy Search)">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="findByNameButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="ixY-wM-jb7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvb-a3-79h">
+                                <rect key="frame" x="77" y="510" width="302" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Find By Age (Exact Search)">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="findByAgeButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="i9H-8F-Ydc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTv-nq-fh6">
+                                <rect key="frame" x="77" y="548" width="302" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Find All">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="findAllButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="VbF-2P-DDC"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HLn-VM-6HN">
+                                <rect key="frame" x="77" y="589" width="302" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xdr-7c-PI02">
+                                <rect key="frame" x="77" y="600" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLa-oG-PI03T">
+                                <rect key="frame" x="232" y="600" width="147" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Find (by id)">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="findByIdButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="jmc-e7-9JK"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xdr-7c-PI05">
+                                <rect key="frame" x="407" y="113" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Age" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xdr-7c-PI06">
+                                <rect key="frame" x="562" y="113" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xdr-7c-PI07">
+                                <rect key="frame" x="407" y="153" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLa-oG-PI08">
+                                <rect key="frame" x="562" y="153" width="147" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Replace (by id)">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="replaceByIdButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="tVB-Ya-Tqp"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HLn-VM-PI09">
+                                <rect key="frame" x="407" y="193" width="302" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xdr-7c-PI09">
+                                <rect key="frame" x="407" y="204" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLa-oG-PI10">
+                                <rect key="frame" x="562" y="204" width="147" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Remove (by id)">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="removeByIdButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="L77-eK-hUr"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HLn-VM-PI11">
+                                <rect key="frame" x="407" y="244" width="302" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTv-nq-PI12">
+                                <rect key="frame" x="407" y="254" width="302" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Load Data From Adapter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loadDataFromAdapterButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="gu9-2D-Avy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTv-nq-PI13">
+                                <rect key="frame" x="407" y="294" width="302" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Get Dirty Documents">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getDirtyDocumentsButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="Pmr-Dx-TmB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTv-nq-PI14">
+                                <rect key="frame" x="407" y="334" width="302" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Push Changes to Adapter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushChangesToAdapterButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="ZZo-0f-3CY"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HLn-VM-PI15">
+                                <rect key="frame" x="407" y="372" width="302" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTv-nq-PI16">
+                                <rect key="frame" x="407" y="381" width="302" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Count All">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="countAllButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="tEL-mM-adn"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Name to Count" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xdr-7c-PI18">
+                                <rect key="frame" x="407" y="421" width="302" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTv-nq-PI17">
+                                <rect key="frame" x="407" y="461" width="302" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Count By Name">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="countByNameButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="yHK-FT-bbk"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HLn-VM-PI22">
+                                <rect key="frame" x="407" y="501" width="302" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xdr-7c-PI21">
+                                <rect key="frame" x="407" y="511" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xdr-7c-PI19">
+                                <rect key="frame" x="562" y="511" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User (optional)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xdr-7c-PI20">
+                                <rect key="frame" x="407" y="551" width="147" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLa-oG-PI23">
+                                <rect key="frame" x="562" y="551" width="147" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Change Password">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changePasswordButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="2F3-MN-sti"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HLn-VM-PI24">
+                                <rect key="frame" x="407" y="589" width="302" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTv-nq-PI25">
+                                <rect key="frame" x="407" y="600" width="302" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.65153365880000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Get FileInfo">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getFileInfoButtonClick:" destination="Tv9-Kf-UDl" eventType="touchUpInside" id="8hu-LY-35p"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="800" height="1066"/>
+                    <connections>
+                        <outlet property="changePasswordNewTextField" destination="Xdr-7c-PI19" id="Bxh-KU-h8V"/>
+                        <outlet property="changePasswordOldTextField" destination="Xdr-7c-PI21" id="XLB-Io-Tkd"/>
+                        <outlet property="changePasswordUserTextField" destination="Xdr-7c-PI20" id="z4M-G4-Tcw"/>
+                        <outlet property="consoleTextView" destination="adc-HV-EKO" id="HTN-nu-DpF"/>
+                        <outlet property="countByNameTextField" destination="Xdr-7c-PI18" id="c3h-ac-ook"/>
+                        <outlet property="enterAgeTextField" destination="Q5t-7N-zrN" id="hVm-aH-Jf5"/>
+                        <outlet property="enterNameTextField" destination="GTy-1x-Xxj" id="4DB-Ei-QhB"/>
+                        <outlet property="findByIdTextField" destination="Xdr-7c-PI02" id="5n5-il-IM1"/>
+                        <outlet property="limitTextField" destination="Fiy-J9-Sd3" id="ej3-Da-iJV"/>
+                        <outlet property="offsetTextField" destination="Xdr-7c-aYB" id="9O0-9A-xJU"/>
+                        <outlet property="passwordTextField" destination="0iQ-Em-hHY" id="yO3-We-2d1"/>
+                        <outlet property="removeByIdTextField" destination="Xdr-7c-PI09" id="Sr4-Vf-gEV"/>
+                        <outlet property="replaceAgeTextField" destination="Xdr-7c-PI06" id="QYb-NV-anp"/>
+                        <outlet property="replaceIdTextField" destination="Xdr-7c-PI07" id="gO6-bb-XRQ"/>
+                        <outlet property="replaceNameTextField" destination="Xdr-7c-PI05" id="GkX-xN-I87"/>
+                        <outlet property="searchTextField" destination="QIv-qW-wJQ" id="kTh-Cr-mZ7"/>
+                        <outlet property="userTextField" destination="TZy-OO-6lp" id="uQX-lu-jUU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nuM-Kr-Enx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="118" y="424"/>
+        </scene>
+    </scenes>
+</document>
