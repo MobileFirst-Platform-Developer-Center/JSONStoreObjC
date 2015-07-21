@@ -40,12 +40,22 @@
 
 @implementation PushToAdapter {
     MainViewController *viewController;
+    JSONStoreCollection *dataCollection;
+    NSArray *dataList;
+}
+-(void)setDataList:(NSArray *)list {
+    dataList = list;
+}
+-(void)setCollection:(JSONStoreCollection *)collection {
+    dataCollection = collection;
 }
 -(void)setViewController:(MainViewController *)controller {
     viewController = controller;
 }
 -(void)onSuccess:(WLResponse *)response {
     [viewController logMessage:PUSH_FINISH_MESSAGE];
+    
+    [dataCollection markDocumentsClean:dataList error:nil];
 }
 -(void)onFailure:(WLFailResponse *)response {
     [viewController logError:[response description]];
@@ -93,16 +103,9 @@
     [[self scrollView] setTranslatesAutoresizingMaskIntoConstraints:YES];
     
     
-//    [[self consoleScrollView] setContentSize:CGSizeMake(0, 5)];
-//    [[self consoleScrollView] setContentOffset:CGPointZero];
-//    [[self consoleScrollView] setTranslatesAutoresizingMaskIntoConstraints:YES];
-    
-//    [self consoleScrollView].scrollEnabled = YES;
-    
     [[self consoleTextView] setBackgroundColor:[UIColor blackColor]];
     [[self consoleTextView] setScrollEnabled:YES];
     
-//    [[self consoleTextView] setContentSize:CGSizeMake(0, 5)];
     [[self consoleTextView] setUserInteractionEnabled:YES];
     [[self consoleTextView] setEditable:NO];
 }
@@ -134,7 +137,7 @@
         message = [[NSString alloc] initWithFormat:@"%@:\n", withMessage];
     }
     else {
-        message = @"Results:\n";
+        message = [[NSString alloc] initWithFormat:@"Results: %d\n", [results count]];
     }
     
     for(id object in results) {
@@ -228,12 +231,12 @@
 }
 
 - (IBAction)removeCollectionButtonClick:(id)sender {
-
+    
     if(!people) {
         [self logError:INIT_FIRST_MESSAGE];
         return;
     }
-
+    
     NSError* error = nil;
     
     BOOL removeCollection = [people removeCollectionWithError:&error];
@@ -277,7 +280,7 @@
     NSError* error = nil;
     
     NSDictionary *data = @{@"name" : nameText, @"age" : age};
-
+    
     int added = [[people addData:@[data] andMarkDirty:YES withOptions:nil error:&error] intValue];
     
     if(added == 1) {
@@ -363,7 +366,7 @@
         return;
     }
     
-
+    
     JSONStoreQueryPart* query = [[JSONStoreQueryPart alloc] init];
     [query searchField:@"age" equal:[age stringValue]];
     
@@ -381,7 +384,7 @@
         [options setOffset:[[NSNumber alloc] initWithInteger:[offsetText integerValue]]];
     }
     
-
+    
     NSArray* findWithQueryPartResult = [people findWithQueryParts:@[query] andOptions:options error:&error];
     
     if(error) {
@@ -399,7 +402,7 @@
         [self logError:INIT_FIRST_MESSAGE];
         return;
     }
-
+    
     NSError* error = nil;
     
     NSString *limitText = [[self limitTextField] text];
@@ -435,7 +438,7 @@
         [self logError:INIT_FIRST_MESSAGE];
         return;
     }
-
+    
     [self resetFieldError:[self findByIdTextField]];
     
     NSError* error = nil;
@@ -459,7 +462,7 @@
     [options filterSearchField:@"_id"];
     [options filterSearchField:@"json"];
     
-
+    
     NSArray* findWithQueryPartResult = [people findWithIds:@[userId] andOptions:options error:&error];
     
     if(error) {
@@ -576,7 +579,7 @@
         [self logError:INIT_FIRST_MESSAGE];
         return;
     }
-
+    
     NSError* error = nil;
     
     NSArray *dirtyDocs = [people allDirtyAndReturnError:&error];
@@ -599,13 +602,17 @@
     NSError* error = nil;
     
     NSArray *dirtyDocs = [people allDirtyAndReturnError:&error];
-
+    
     WLProcedureInvocationData *invocationData = [[WLProcedureInvocationData alloc] initWithAdapterName:@"People" procedureName:@"pushPeople"];
-
+    
     [invocationData setParameters:@[dirtyDocs]];
     
     PushToAdapter *pushDelegate =  [[PushToAdapter alloc] init];
+    [pushDelegate setCollection:people];
+    [pushDelegate setDataList:dirtyDocs];
+    
     [pushDelegate setViewController:self];
+    
     
     [client invokeProcedure:invocationData withDelegate:pushDelegate];
 }
@@ -635,7 +642,7 @@
         [self logError:INIT_FIRST_MESSAGE];
         return;
     }
-
+    
     [self resetFieldError:[self countByNameTextField]];
     
     NSError* error = nil;
@@ -714,7 +721,7 @@
 - (IBAction)getFileInfoButtonClick:(id)sender {
     
     NSError *error = nil;
-
+    
     NSArray* results = [[JSONStore sharedInstance] fileInfoAndReturnError:&error];
     
     if(error) {
